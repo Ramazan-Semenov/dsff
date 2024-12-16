@@ -7,7 +7,14 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <DataGrid ItemsSource="{Binding GetEmpls}" EnableColumnVirtualization="True" EnableRowVirtualization="True">
+        <DataGrid
+            VirtualizingPanel.CacheLength="1"
+            VirtualizingPanel.IsVirtualizing="True"
+            VirtualizingPanel.ScrollUnit="Item"
+            ItemsSource="{Binding GetEmpls}" EnableColumnVirtualization="True" EnableRowVirtualization="True">
+            <DataGrid.CacheMode>
+                <BitmapCache EnableClearType="True"/>
+            </DataGrid.CacheMode>
             
         </DataGrid>
     </Grid>
